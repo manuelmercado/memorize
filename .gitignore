@@ -1,0 +1,4 @@
+# first line must not contain any rules
+/memorize/settings.py
+/memorize/settings.pyc
+!.gitignore

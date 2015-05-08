@@ -1,10 +1,11 @@
 from django.db import models
 
-class Tarea(models.Model):
-	id_tarea = models.CharField(max_length=20)
+from usuario.models import Usuarios
+
+class Tareas(models.Model):
 	description = models.CharField(max_length=200)
 	date_tarea = models.DateTimeField(auto_now=True)
-	owner = models.ForeignKey('Usuario.usuario')
+	owner = models.ForeignKey(Usuarios)
 	state = models.BooleanField()
 
 	
