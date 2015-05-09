@@ -9,5 +9,5 @@ class Actividades(models.Model):
 	Descripcion = models.TextField(blank=False)
 	usuario = models.ForeignKey(Usuarios)
 
-
-
+	def __unicode__(self):
+		return self.Descripcion

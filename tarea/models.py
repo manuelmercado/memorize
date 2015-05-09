@@ -8,4 +8,5 @@ class Tareas(models.Model):
 	owner = models.ForeignKey(Usuarios)
 	state = models.BooleanField()
 
-	
+	def __unicode__(self):
+		return self.description

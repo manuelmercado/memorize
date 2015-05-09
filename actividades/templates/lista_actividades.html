@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lista de Actividades</title>
+</head>
+<body>
+	<h1>Actividades para la tarea: {{tarea_t}}</h1>
+	<section>
+		{% for ind in q_actividades %}
+		<article>
+			<p>
+				{{ind.fecha}}
+			</p>
+			<p>
+				{{ind.Descripcion}}
+			</p>
+			<p>
+				{{ind.usuario}}
+			</p>
+		</article>
+		{% endfor %}
+	</section>
+</body>
+</html>

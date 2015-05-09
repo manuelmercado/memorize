@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Tareas
+
+
+class TareasAdmin(admin.ModelAdmin):    
+    list_display = ('description', 'date_tarea', 'owner', 'state')
+
+admin.site.register(Tareas, TareasAdmin)

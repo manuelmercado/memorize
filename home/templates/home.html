@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Home de Memorize</title>
+</head>
+<body>
+	<h1>Listado de tareas pendientes</h1>
+	<section>
+	{% for ind in q_tareas %}
+    <article>
+    	<p>
+   			<a href="/actividades/id={{ind.id}}">{{ind.description}}</a>
+    	</p>
+    	<p>
+    		{{ind.owner}}
+    	</p>
+    		{{ind.date_tarea}}
+      </article>
+	{% endfor %}
+	</section>
+</body>
+</html>
