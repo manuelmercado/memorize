@@ -2,24 +2,29 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Lista de Actividades</title>
+	<link rel="stylesheet" href="/static/css/foundation.css" />
+  <script src="/static/js/vendor/modernizr.js"></script>
 </head>
 <body>
-	<h1>Actividades para la tarea: {{tarea_t}}</h1>
-	<section>
+	<h2>Actividades para la tarea: {{tarea_t}}</h1>
+	<section class="container">
 		{% for ind in q_actividades %}
-		<article>
-			<p>
+		<article class="row panel clearfix">
+			<p class="small-12 small-text-center medium-text-left medium-5 columns">
 				{{ind.fecha}}
 			</p>
-			<p>
+			<p class="small-6 medium-3 columns">
 				{{ind.Descripcion}}
 			</p>
-			<p>
+			<p class="small-6 medium-3 columns">
 				{{ind.usuario}}
 			</p>
 		</article>
 		{% endfor %}
 	</section>
+  <script src="/static/js/vendor/jquery.js"></script>
+  <script src="/static/js/foundation.min.js"></script>
 </body>
 </html>

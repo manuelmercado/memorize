@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Home de Memorize</title>
+  <link rel="stylesheet" href="/static/css/foundation.css" />
+  <script src="/static/js/vendor/modernizr.js"></script>
 </head>
 <body>
 	<h1>Listado de tareas pendientes</h1>
-	<section>
+	<section class="container ">
 	{% for ind in q_tareas %}
-    <article>
-    	<p>
-   			<a href="/actividades/id={{ind.id}}">{{ind.description}}</a>
-    	</p>
-    	<p>
-    		{{ind.owner}}
-    	</p>
-    		{{ind.date_tarea}}
-      </article>
-	{% endfor %}
+    <div class="row panel clearfix">
+    	<div class="small-12 small-text-center medium-text-left medium-5 columns">
+       			<a href="/actividades/id={{ind.id}}">{{ind.description}}</a>
+    	</div>
+    	<div class="small-6 medium-3 columns">
+            {{ind.owner}}
+      </div>
+      <div class="small-6 medium-4 columns">
+      	   {{ind.date_tarea}}
+      </div> 
+    </div>
+ 	{% endfor %}
 	</section>
+  <script src="/static/js/vendor/jquery.js"></script>
+  <script src="/static/js/foundation.min.js"></script>
 </body>
 </html>
