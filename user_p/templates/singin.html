@@ -2,33 +2,38 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Singin</title>
+    <link rel="stylesheet" href="/static/css/foundation.css" />
+    <script src="/static/js/vendor/modernizr.js"></script>
 </head>
 <body>
 	{% block main %}
-    <div >
+    <div class="row">
         <form name="LoginForm" action="" method="post">
         {% csrf_token %}
-        <div >
+        <div class="small-12 medium-6 column">
             <label for="username">Username</label>
-            <div >
+            <div>
                 <input type="text" id="username" name="username"  placeholder="Username">
             </div>
         </div>
-        <div >
+        <div class="small-12 medium-6 column">
             <label for="password">Password</label>
-            <div >
+            <div>
                 <input type="password" name="password" id="password" placeholder="Password">
             </div>
         </div>
         <div>
-            <div>
-                <button type="submit" class="btn">Login</button>
+            <div class="small-4 medium-9 large-10 column"></div>
+            <div class="small-8 medium-3 large-2 column">
+                <button type="submit" class="button round">Login</button>
             </div>
         </div>
         </form>
     </div>
 	{% endblock %}
-	
+    <script src="/static/js/vendor/jquery.js"></script>
+    <script src="/static/js/foundation.min.js"></script>
 </body>
 </html>
