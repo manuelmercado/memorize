@@ -8,4 +8,6 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^actividades/id=(\d+)$', 'actividades.views.lista', name='lista'),
+    url(r'^singin/', 'user_p.views.login_user', name='login_user'),
+    url(r'^logout_p', 'user_p.views.logout_view', name='logout_view'),
 ]

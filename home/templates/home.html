@@ -8,8 +8,10 @@
   <script src="/static/js/vendor/modernizr.js"></script>
 </head>
 <body>
-	<h1>Listado de tareas pendientes</h1>
-	<section class="container ">
+	<h2>Listado de tareas pendientes</h2>
+  <p>Hola: {{request.user}}</p>
+  <a href="/logout_p">Logout</a>
+  <section class="container ">
 	{% for ind in q_tareas %}
     <div class="row panel clearfix">
     	<div class="small-12 small-text-center medium-text-left medium-5 columns">
