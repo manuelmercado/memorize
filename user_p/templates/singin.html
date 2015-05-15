@@ -10,6 +10,7 @@
 <body>
 	{% block main %}
     <div class="row">
+        <h4 class='text-center'>Login Memorize</h4>
         <form name="LoginForm" action="" method="post">
         {% csrf_token %}
         <div class="small-12 medium-6 column">
@@ -25,8 +26,7 @@
             </div>
         </div>
         <div>
-            <div class="small-4 medium-9 large-10 column"></div>
-            <div class="small-8 medium-3 large-2 column">
+           <div class="text-center">
                 <button type="submit" class="button round">Login</button>
             </div>
         </div>

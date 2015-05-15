@@ -8,17 +8,17 @@
   <script src="/static/js/vendor/modernizr.js"></script>
 </head>
 <body>
-	<h2>Actividades para la tarea: {{tarea_t}}</h1>
+	<h4 class="text-center">Actividades para la tarea: {{tarea_t}}</h4>
 	<section class="container">
 		{% for ind in q_actividades %}
 		<article class="row panel clearfix">
-			<p class="small-12 small-text-center medium-text-left medium-5 columns">
+			<p class="small-12 small-text-center medium-text-left medium-4 columns">
 				{{ind.fecha}}
 			</p>
-			<p class="small-6 medium-3 columns">
+			<p class="small-6 medium-6 columns">
 				{{ind.Descripcion}}
 			</p>
-			<p class="small-6 medium-3 columns">
+			<p class="small-6 medium-2 columns">
 				{{ind.usuario}}
 			</p>
 		</article>
