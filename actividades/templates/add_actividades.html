@@ -2,13 +2,23 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="/static/css/estilos.css">
 	<title>Nueva Actividad</title>
 </head>
 <body>
-	<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Submit" />
-	</form>
-</body>
+	<header class="header">
+		
+	</header>
+	<section class="container">
+		<p class="titulo">
+			Agrega nueva Actividad
+		</p>
+		<form class="form" method="post">
+    		{% csrf_token %}
+    		{{form.as_p}}
+    	<input class="boton" type="submit" value="Enviar"/>
+		</form>
+	</section>
+</body>	
 </html>
