@@ -14,5 +14,5 @@ def add_tarea(request):
 			tarea.save()
 			return HttpResponseRedirect('/')
 	else:
-			form = TareaForm()
+		form = TareaForm()
 	return render_to_response('tarea_add.html', context_instance = RequestContext(request, locals()))

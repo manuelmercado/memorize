@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^singin/', 'user_p.views.login_user', name='login_user'),
     url(r'^logout_p/', 'user_p.views.logout_view', name='logout_view'),
     url(r'^add_tarea/', 'tarea.views.add_tarea', name='add_tarea'),
+    url(r'^actividades/add_actividades/id=(\d+)$', 'actividades.views.add_actividades', name='add_actividades'),
 ]
