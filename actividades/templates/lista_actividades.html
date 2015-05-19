@@ -9,6 +9,14 @@
 </head>
 <body>
 	<h4 class="text-center">Actividades para la tarea: {{tarea_t}}</h4>
+	<div class="row">
+		<div class="small-6 column radius secondary label text-left">
+			<a href="/">Volver a tareas</a>
+		</div>
+		<div class="small-6 column radius secondary label text-right">
+			<a href="/actividades/add_actividades/id={{id}}">Nueva Actividad</a>
+		</div>
+	</div>
 	<section class="container">
 		{% for ind in q_actividades %}
 		<article class="row panel clearfix">
@@ -24,9 +32,6 @@
 		</article>
 		{% endfor %}
 	</section>
-	<div>
-		<a href="/actividades/add_actividades/id={{id}}">Nueva Actividad</a>
-	</div>
   <script src="/static/js/vendor/jquery.js"></script>
   <script src="/static/js/foundation.min.js"></script>
 </body>
