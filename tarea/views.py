@@ -15,7 +15,7 @@ def add_tarea(request):
 			tarea.state = False
 			tarea.owner = request.user
 			tarea.save()
-			return HttpResponseRedirect('/')
+			return HttpResponseRedirect('/actividades/add_actividades/id=%s' % tarea.id)
 	else:
 		form = TareaForm()
 	return render_to_response('tarea_add.html', context_instance = RequestContext(request, locals()))
