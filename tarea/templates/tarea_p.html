@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tareas sin atencion</title>
+</head>
+<body>
+	<p>
+		ides de tareas sin atencion
+	</p>
+	<p>
+		{{ids_tarea}}
+	</p>
+	{%for i in tareas_sa%}
+	<p>
+		{{i.description}}
+	</p>
+	{% endfor %}
+</body>
+</html>

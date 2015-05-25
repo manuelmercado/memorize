@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.db import models
 from django.template.loader import get_template
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render_to_response
+from django.http import HttpResponse, HttpResponseRedirect, Http404
+from django.shortcuts import render_to_response, get_object_or_404
 from django.template.context import RequestContext
 from actividades.models import *
 from tarea.models import *
@@ -10,9 +10,9 @@ from .forms import *
 
 
 def lista(request, id):
+	tarea_t = get_object_or_404(Tareas, id=id)
 	q_actividades = Actividades.objects.filter(tarea=id)
 	actividades_template = 'lista_actividades.html'
-	tarea_t = Tareas.objects.get(id=id)
 	return render_to_response(actividades_template, locals())
 
 def add_actividades(request, id):
