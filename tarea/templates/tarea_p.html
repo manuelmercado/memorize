@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta charset="UTF-8">
 	<title>tareas sin atencion</title>
+	<link rel="stylesheet" href="/static/css/foundation.css" />
+  <script src="/static/js/vendor/modernizr.js"></script>
 </head>
 <body>
-	<p>
-		ides de tareas sin atencion
-	</p>
-	<p>
-		{{ids_tarea}}
-	</p>
+	<h3 class="text-center">Listado de tareas Sin Atención 
+	</h3>
+	 <div class="row">
+    <a class="small-12 column radius secondary label text-center" href="/">Volver a Tareas</a>
+    </div>
+	<section class="container">
 	{%for i in tareas_sa%}
-	<p>
-		{{i.description}}
-	</p>
+		<div class="row panel clearfix">
+			<a href="/actividades/id={{i.id}}" class="small-12 small-text-center medium-text-left medium-5 columns">{{i.description}}</a>			
+			<div class="small-6 medium-3 columns">
+				{{i.owner}}
+			</div>
+			<div class="small-6 medium-4 columns">
+				{{i.date_tarea}}			
+			</div>
+		</div>
 	{% endfor %}
+	</section>
 </body>
 </html>

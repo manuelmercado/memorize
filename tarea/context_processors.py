@@ -19,4 +19,4 @@ def tsa(request):
 		if ddias > 3:
 			ids_tarea.append(i.pk)
 
-	return {'ids_tarea': len(ids_tarea)}
+	return {'ids_tarea': ids_tarea}

@@ -10,9 +10,9 @@
 <body>
 	<h3 class="text-center">Listado de tareas pendientes</h3>
   <div class="row">
-    <p class="small-6 column radius secondary label text-left"> Hola: {{request.user}}</p>
-    <p>Tareas sin Atencion: {{ids_tarea}}</p>
-    <a class="small-6 column radius secondary label text-right" href="/logout_p">Logout</a>
+    <a class="small-12 medium-4 column radius alert label text-center" href="/tareas/tarea_sa">Tareas sin Atencion: {{ids_tarea|length}}</a>
+    <p class="small-6 medium-4 column radius secondary label text-left"> Hola: {{request.user}}</p>
+    <a class="small-6 medium-4 column radius secondary label text-right" href="/logout_p">Logout</a>
   </div>
   <section class="container ">
 	{% for ind in q_tareas %}
