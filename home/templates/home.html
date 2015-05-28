@@ -8,6 +8,52 @@
   <script src="/static/js/vendor/modernizr.js"></script>
 </head>
 <body>
+  <header>
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a class="icon-home" href="#"></a></h1>
+      </li>
+      <li class="toggle-topbar menu-icon">
+        <a href=""><span>Menu</span></a>
+      </li>
+    </ul>
+    <section class="top-bar-section">
+      <ul class="left">
+        <li>
+          <a href="tareas/tarea_sa/">Tareas Sin Atencion: {{ids_tarea|length}}</a>
+        </li>
+      </ul>
+      <ul class="left">
+        <li><a href="/">Tareas pendientes</a></li>
+      </ul>
+      <ul class="left">
+        <li><a href="">Reportes</a></li>
+      </ul>
+      <ul class="left">
+        <li class="has-form">
+          <div class="row collapse">
+              <div class="large-8 small-9 columns">
+                  <input type="text" placeholder="Tareas">
+              </div>
+              <div class="large-4 small-3 columns">
+                  <a href="#" class="alert button expand">Busca</a>
+              </div>
+            </div>
+        </li>
+      </ul>
+      <ul class="right">
+        <li><a href="#">Logout</a></li>
+        <li class="divider"></li>
+      </ul>
+
+      <ul class="right">
+        <li class="label"><span>{{request.user}}</span></li>
+        <li class="divider"></li>
+      </ul>
+    </section>
+  </nav>
+  </header>
 	<h3 class="text-center">Listado de tareas pendientes</h3>
   <div class="row">
     <a class="small-12 medium-4 column radius alert label text-center" href="/tareas/tarea_sa">Tareas sin Atencion: {{ids_tarea|length}}</a>

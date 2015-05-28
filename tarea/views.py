@@ -39,5 +39,5 @@ def tarea_sin_atencion(request):
 		if ddias > 3:
 			pks_tarea.append(i.pk)
 	tareas_sa = Tareas.objects.filter(pk__in=pks_tarea)
-	return render_to_response('tarea_p.html',locals())
+	return render_to_response('tarea_p.html', context_instance = RequestContext(request, locals()))
 

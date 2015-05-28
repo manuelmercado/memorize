@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.db import models
 from django.template.loader import get_template
@@ -8,7 +9,7 @@ from actividades.models import *
 from tarea.models import *
 from .forms import *
 
-
+@login_required(login_url="/singin")
 def lista(request, id):
 	tarea_t = get_object_or_404(Tareas, id=id)
 	q_actividades = Actividades.objects.filter(tarea=id)
