@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 from django.http import HttpResponseRedirect
@@ -6,6 +7,7 @@ from datetime import datetime, timedelta
 from forms import *
 from actividades.models import *
 from .models import *
+
 
 def add_tarea(request):
 	if request.method == "POST":
@@ -20,6 +22,7 @@ def add_tarea(request):
 		form = TareaForm()
 	return render_to_response('tarea_add.html', context_instance = RequestContext(request, locals()))
 
+@login_required(login_url="/singin")
 def tarea_sin_atencion(request):
 	now = datetime.utcnow().replace(tzinfo=utc)
 	p_tareas = Tareas.objects.filter(state=False)
