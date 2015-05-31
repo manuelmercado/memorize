@@ -4,66 +4,47 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta charset="UTF-8">
 	<title>tareas sin atencion</title>
-	<link rel="stylesheet" href="/static/css/foundation.css" />
+	<link rel="stylesheet" href="/static/css/estilos_tsa.css" />
   <script src="/static/js/vendor/modernizr.js"></script>
 </head>
 <body>
-	<header>
-	<nav class="top-bar" data-topbar role="navigation">
-		<ul class="title-area">
-			<li class="name">
-				<h1><a class="icon-home" href="#"></a></h1>
-			</li>
-			<li class="toggle-topbar menu-icon">
-				<a href=""><span>Menu</span></a>
-			</li>
-		</ul>
-		<section class="top-bar-section">
-			<ul class="left">
-				<li>
-					<a href="">Tareas Sin Atencion: {{ids_tarea|length}}</a>
-				</li>
-			</ul>
-			<ul class="left">
+	<header class="head">
+		<a href="#" class="boton_menu">*</a>
+		<nav class="menu">
+			<ul>
+				<li><a href="#">Tareas sin Atencón</a>
 				<li><a href="/">Tareas pendientes</a></li>
-			</ul>
-			<ul class="left">
 				<li><a href="">Reportes</a></li>
-			</ul>
-			<ul class="left">
-				<li class="has-form">
-					<div class="row collapse">
-	    				<div class="large-8 small-9 columns">
-	      					<input type="text" placeholder="Tareas">
-	    				</div>
-	    				<div class="large-4 small-3 columns">
-	      					<a href="#" class="alert button expand">Busca</a>
-	    				</div>
-	  				</div>
-				</li>
-			</ul>
-			<ul class="right">
-				<li><a href="#">Logout</a></li>
-				<li class="divider"></li>
-			</ul>
-			<ul class="right">
-				<li class="label"><span>{{request.user}}</span></li>
-				<li class="divider"></li>
-			</ul>
-		</section>
-	</nav>
+	    		<li>
+	    			<div>
+	      				<input type="text" placeholder="Tareas">
+	    			</div>
+	    			
+	      		<li>
+	      			<a href="#">Busca</a>
+	      		</l1>	
+	  		</ul>	
+		</nav>
+		<div class="titulo">
+			<div class="memorize">
+				<span>Memorize</span>
+			</div>
+			<div class="usuario">
+				<span>{{request.user}}</span>
+			</div>
+		</div>
+		<a href="#" class="logout">*</a>
 	</header>
-
-	<h2 class="radius alert label text-center">Listado de tareas Sin Atención 
+	<h2>Listado de tareas Sin Atención 
 	</h2>
-	<section class="container">
+	<section>
 	{%for i in tareas_sa%}
-		<div class="row panel clearfix">
-			<a href="/actividades/id={{i.id}}" class="small-12 small-text-center medium-text-left medium-5 columns">{{i.description}}</a>			
-			<div class="small-6 medium-3 columns">
+		<div>
+			<a href="/actividades/id={{i.id}}">{{i.description}}</a>			
+			<div>
 				{{i.owner}}
 			</div>
-			<div class="small-6 medium-4 columns">
+			<div>
 				{{i.date_tarea}}			
 			</div>
 		</div>
