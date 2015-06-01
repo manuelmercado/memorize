@@ -9,7 +9,7 @@
 </head>
 <body>
 	<header class="head">
-		<a href="#" class="boton_menu">*</a>
+		<a href="#" class="boton_menu icon-menu"></a>
 		<nav class="menu">
 			<ul>
 				<li><a href="#">Tareas sin Atencón</a>
@@ -25,7 +25,7 @@
 	      		</l1>	
 	  		</ul>	
 		</nav>
-		<div class="titulo">
+		<div class="titulo-header">
 			<div class="memorize">
 				<span>Memorize</span>
 			</div>
@@ -33,21 +33,27 @@
 				<span>{{request.user}}</span>
 			</div>
 		</div>
-		<a href="#" class="logout">*</a>
+		<a href="#" class="logout icon-exit"></a>
 	</header>
-	<h2>Listado de tareas Sin Atención 
+	<h2 class="titulo">Listado de tareas Sin Atención 
 	</h2>
-	<section>
+	<section class="container">
 	{%for i in tareas_sa%}
-		<div>
-			<a href="/actividades/id={{i.id}}">{{i.description}}</a>			
+		<article>
 			<div>
-				{{i.owner}}
+				<a href="/actividades/id={{i.id}}">{{i.description}}</a>			
 			</div>
 			<div>
-				{{i.date_tarea}}			
+				<span>
+					{{i.owner}}
+				</span>	
 			</div>
-		</div>
+			<div>
+				<span>
+					{{i.date_tarea}}
+				</span>			
+			</div>	
+		</article>
 	{% endfor %}
 	</section>
 </body>
