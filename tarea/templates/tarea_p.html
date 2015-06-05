@@ -4,8 +4,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta charset="UTF-8">
 	<title>tareas sin atencion</title>
-	<link rel="stylesheet" href="/static/css/estilos_tsa.css" />
-  <script src="/static/js/vendor/modernizr.js"></script>
+	{% load static from staticfiles %}
+	<link rel="stylesheet" href="{% static "css/estilos_tsa.css" %} "/>
+  
 </head>
 <body>
 	<header class="head">
