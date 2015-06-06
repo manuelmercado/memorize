@@ -4,35 +4,56 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Lista de Actividades</title>
-	<link rel="stylesheet" href="/static/css/foundation.css" />
-  <script src="/static/js/vendor/modernizr.js"></script>
+	{% load static from staticfiles %}
+	<link rel="stylesheet" href="{% static "css/estilos_la.css" %} "/>
 </head>
 <body>
-	<h4 class="text-center">Actividades para la tarea: {{tarea_t}}</h4>
-	<div class="row">
-		<div class="small-6 column radius secondary label text-left">
-			<a href="/">Volver a tareas</a>
+	<header class="head">
+		<a href="#" class="boton_menu icon-menu"></a>
+		<nav class="menu">
+			<ul>
+				<li><a href="#">Tareas sin Atencón</a>
+				<li><a href="/">Tareas pendientes</a></li>
+				<li><a href="">Reportes</a></li>
+	    		<li>
+	    			<div>
+	      				<input type="text" placeholder="Tareas">
+	    			</div>
+	    			
+	      		<li>
+	      			<a href="#">Busca</a>
+	      		</l1>	
+	  		</ul>	
+		</nav>
+		<div class="titulo-header">
+			<div class="memorize">
+				<span>Memorize</span>
+			</div>
+			<div class="usuario">
+				<span>{{request.user}}</span>
+			</div>
 		</div>
-		<div class="small-6 column radius secondary label text-right">
-			<a href="/actividades/add_actividades/id={{id}}">Nueva Actividad</a>
-		</div>
-	</div>
+		<a href="/" class="logout icon-home"></a>
+	</header>
+	<h2 class="titulo">Actividades De La Tarea</h4>
+	<h2 class="titulo">{{tarea_t}}</h2>
 	<section class="container">
 		{% for ind in q_actividades %}
-		<article class="row panel clearfix">
-			<p class="small-12 small-text-center medium-text-left medium-4 columns">
-				{{ind.fecha}}
-			</p>
-			<p class="small-6 medium-6 columns">
+		<article class="actividad">
+			<p class="actividad-titulo">
 				{{ind.Descripcion}}
 			</p>
-			<p class="small-6 medium-2 columns">
-				{{ind.usuario}}
-			</p>
+			<div class="actividad-datos">
+				<div class="left">
+					{{ind.usuario}}
+				</div>
+				<div class="right">
+					{{ind.fecha}}
+				</div>
+			</div>
 		</article>
 		{% endfor %}
 	</section>
-  <script src="/static/js/vendor/jquery.js"></script>
-  <script src="/static/js/foundation.min.js"></script>
-</body>
+	<a class="button" href="/actividades/add_actividades/id={{id}}">Nueva Actividad</a>
+ </body>
 </html>
