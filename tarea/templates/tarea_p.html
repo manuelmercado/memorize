@@ -41,23 +41,27 @@
 	<section class="container">
 	{%for i in tareas_sa%}
 		<article class="tarea">
-			<div class="tarea-titulo">
-				<a href="/actividades/id={{i.id}}">{{i.description}}</a>			
-			</div>
+			<!-- <div> -->
+				<a class="tarea-titulo" href="/actividades/id={{i.id}}">{{i.description}}</a>			
+			<!-- </div> -->
 			<div class="tarea-datos">
-				<div class="left">
+				<div class="left owner">
 					<span>
 						{{i.owner}}
 					</span>	
 				</div>
 				<div class="right">
-					<span>
+					<div>
 						{{i.date_tarea}}
-					</span>			
+					</div>
+					<div>
+						{{i.date_tarea|timesince}}
+					</div>			
 				</div>		
 			</div>
 		</article>
 	{% endfor %}
 	</section>
+	<a href="add_tarea/" class="button">Nueva Tarea</a>
 </body>
 </html>
