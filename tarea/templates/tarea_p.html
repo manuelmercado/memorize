@@ -6,25 +6,23 @@
 	<title>tareas sin atencion</title>
 	{% load static from staticfiles %}
 	<link rel="stylesheet" href="{% static "css/estilos_tsa.css" %} "/>
-  
+	<script src="{% static "js/show-menu.js" %}"></script>
 </head>
 <body>
 	<header class="head">
-		<a href="#" class="boton_menu icon-menu"></a>
+		<a href="#" onclick="show_menu()" class="boton_menu icon-menu"></a>
 		<nav class="menu">
-			<ul>
-				<li><a href="#">Tareas sin Atencón</a>
-				<li><a href="/">Tareas pendientes</a></li>
-				<li><a href="">Reportes</a></li>
-	    		<li>
+			<ul class="lista">
+				<li class="items"><a href="/">Tareas sin Atencón</a>
+				<li class="items"><a href="/tp">Tareas pendientes</a></li>
+				<li class="items"><a href="#">Reportes</a></li>
+	    		<li class="items">
 	    			<div>
-	      				<input type="text" placeholder="Tareas">
-	    			</div>
-	    			
-	      		<li>
-	      			<a href="#">Busca</a>
-	      		</l1>	
-	  		</ul>	
+	      				<input type="text" placeholder="Tareas o Actividades" />
+			      		<a class="icon-search" href="#"></a>
+			      	</div>
+	    		</li>	
+	    	</ul>	
 		</nav>
 		<div class="titulo-header">
 			<div class="memorize">
