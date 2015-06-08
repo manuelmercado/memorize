@@ -32,9 +32,9 @@
 				<span>{{request.user}}</span>
 			</div>
 		</div>
-		<a href="#" class="logout icon-exit"></a>
+		<a href="/logout_p" class="logout icon-exit"></a>
 	</header>
-	<h2 class="titulo">Listado de tareas Sin Atención 
+	<h2 class="titulo">Listado de tareas Sin Atención {{ids_tarea|length}}
 	</h2>
 	<section class="container">
 	{%for i in tareas_sa%}
