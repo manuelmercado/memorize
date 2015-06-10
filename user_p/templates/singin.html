@@ -2,41 +2,55 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    {% load static from staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/singin.css" %}"/>
 	<title>Singin</title>
-    <link rel="stylesheet" href="/static/css/foundation.css" />
-    <script src="/static/js/vendor/modernizr.js"></script>
 </head>
 <body>
+    <header class="head">
+        <div class="titulo-header">
+            <div class="memorize">
+                <span>
+                    Memorize
+                </span>
+            </div>
+        </div>
+    </header>
 	{% block main %}
-    <div class="row">
-        <h4 class='text-center' >Login Memorize</h4>
+    <section class="container">
+        <p class="titulo">
+            Login
+        </p>
         {% if error_m %}
-            <h4 class="alert-box alert round">{{error_m}}</h4>
+            <ul class="errorlist"><li>{{error_m}}</li>
+            </ul>
         {% endif %}
-        <form name="LoginForm" action="" method="post">
-        {% csrf_token %}
-        <div class="small-12 medium-6 column">
-            <label for="username">Username</label>
+        <form class="form" name="LoginForm" action="" method="post">
+        {%csrf_token%}
+            <div class="form-field">
+                <label for="username">Usuario</label>
+                <div>
+                    <input class="text-box" type="text" id="username" name="username">
+                </div>
+            </div>
+            <div class="form-field">
+                <label for="password">Contraseña</label>
+                <div>
+                    <input class="text-box" type="password" name="password" id="password">
+                </div>
+            </div>
             <div>
-                <input type="text" id="username" name="username"  placeholder="Username">
+               <div>
+                    <button type="submit" class="button round">Enviar</button>
+                </div>
             </div>
-        </div>
-        <div class="small-12 medium-6 column">
-            <label for="password">Password</label>
-            <div>
-                <input type="password" name="password" id="password" placeholder="Password">
-            </div>
-        </div>
-        <div>
-           <div class="text-center">
-                <button type="submit" class="button round">Login</button>
-            </div>
-        </div>
         </form>
-    </div>
+    </section>
 	{% endblock %}
+    <!--
     <script src="/static/js/vendor/jquery.js"></script>
-    <script src="/static/js/foundation.min.js"></script>
+    <script src="/static/js/foundation.min.js"></script>*/
+    -->
 </body>
 </html>

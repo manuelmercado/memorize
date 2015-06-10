@@ -7,25 +7,12 @@ verde_claro = #0E8964
 rojo_titulo = #925346
 lila = #460C75
 
-label
-	display none
 body
 	font-size 16px
 	font-family 'Myriad Pro Regular'
 a
 	text-decoration none
-	
-#id_description
-	background-color white
-	border 2px solid verde_claro
-	color black
-	height 32px
-	margin auto
-	width 270px
-	border-bottom-left-radius 12px
-	border-bottom-right-radius 12px
-	border-top-left-radius 12px
-	border-top-right-radius 12px
+
 .button
 	background-color verde
 	border-bottom-left-radius 19px
@@ -54,13 +41,16 @@ a
 	padding 0.5em 0.5em
 	// text-align left
 .form
-	margin 0
+	margin 0 auto
+	width 300px
 	p
 		text-align center
 		margin 1em 0 0 0
 	li
 		text-align left
 		list-style-type circle
+	&-field
+		margin-top 0.7em
 .head
 	background-color verde
 	color white
@@ -68,13 +58,18 @@ a
 	margin 0
 	// overflow hidden
 	position relative
-.logout
-	color white
-	font-size 1.2em
-	margin-top -10px
-	position absolute
-	right 1em		
-	top 50%
+.text-box
+	background-color white
+	border 2px solid verde_claro
+	color black
+	height 32px
+	margin auto
+	width 270px
+	border-bottom-left-radius 12px
+	border-bottom-right-radius 12px
+	border-top-left-radius 12px
+	border-top-right-radius 12px
+	padding 0 0 0 1em
 .titulo
 	background-color rojo_titulo
 	border-bottom-left-radius 14px
