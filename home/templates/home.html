@@ -3,11 +3,13 @@
 <head>
 	<meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Home de Memorize</title>
-  <link rel="stylesheet" href="/static/css/foundation.css" />
-  <script src="/static/js/vendor/modernizr.js"></script>
+	<title>Tareas Pendientes</title>
+  {% load static from staticfiles %}
+  <link rel="stylesheet" href="{% static "css/estilos_tp.css" %}" />
+  <script src="{% static "js/show-menu.js" %}"></script>
 </head>
 <body>
+<<<<<<< HEAD
   <header>
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
@@ -53,37 +55,56 @@
       </ul>
     </section>
   </nav>
+=======
+  <header class="head">
+      <a href="#" onclick="show_menu()" class="boton_menu icon-menu"></a>
+      <nav class="menu">
+        <ul class="lista">
+          <li class="items"><a href="/">Tareas sin Atencón</a>
+          <li class="items"><a href="/tp">Tareas pendientes</a></li>
+          <li class="items"><a href="#">Reportes</a></li>
+            <li class="items">
+              <div>
+                  <input type="text" placeholder="Tareas o Actividades" />
+                  <a class="icon-search" href="#"></a>
+                </div>
+            </li> 
+          </ul> 
+      </nav>
+      <div class="titulo-header">
+        <div class="memorize">
+          <span>Memorize</span>
+        </div>
+        <div class="usuario">
+          <span>{{request.user}}</span>
+        </div>
+      </div>
+      <a href="/" class="logout icon-home"></a>
+>>>>>>> estilos
   </header>
-	<h3 class="text-center">Listado de tareas pendientes</h3>
-  <div class="row">
-    <a class="small-12 medium-4 column radius alert label text-center" href="/tareas/tarea_sa">Tareas sin Atencion: {{ids_tarea|length}}</a>
-    <p class="small-6 medium-4 column radius secondary label text-left"> Hola: {{request.user}}</p>
-    <a class="small-6 medium-4 column radius secondary label text-right" href="/logout_p">Logout</a>
-  </div>
+	<h2 class="titulo">Listado de tareas pendientes</h2>
   <section class="container ">
 	{% for ind in q_tareas %}
-    <div class="row panel clearfix">
-    	<div class="small-12 small-text-center medium-text-left medium-5 columns">
-       			<a href="/actividades/id={{ind.id}}">{{ind.description}}</a>
-    	</div>
-    	<div class="small-6 medium-3 columns">
+   <article class="tarea">
+      <a class="tarea-titulo" href="/actividades/id={{ind.id}}">{{ind.description}}</a>     
+      <div class="tarea-datos">
+        <div class="left owner">
+          <span>
             {{ind.owner}}
+          </span> 
+        </div>
+        <div class="right">
+          <div>
+            {{ind.date_tarea}}
+          </div>
+          <div>
+            {{ind.date_tarea|timesince}}
+          </div>      
+        </div>    
       </div>
-      <div class="small-6 medium-4 columns">
-      	   <div>
-             {{ind.date_tarea}}
-           </div>
-           <div>
-             Hace: {{ind.date_tarea|timesince}}
-           </div>
-      </div> 
-    </div>
+    </article>
  	{% endfor %}
-  <form class="text-center" action="/add_tarea">
-    <input class="button round" type="submit" value="Nueva Tarea">
-  </form> 
-	</section>
-  <script src="/static/js/vendor/jquery.js"></script>
-  <script src="/static/js/foundation.min.js"></script>
+ </section>
+ <a href="add_tarea/" class="button">Nueva Tarea</a>
 </body>
 </html>

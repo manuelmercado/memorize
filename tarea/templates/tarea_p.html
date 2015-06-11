@@ -4,10 +4,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta charset="UTF-8">
 	<title>tareas sin atencion</title>
-	<link rel="stylesheet" href="/static/css/foundation.css" />
-  <script src="/static/js/vendor/modernizr.js"></script>
+	{% load static from staticfiles %}
+	<link rel="stylesheet" href="{% static "css/estilos_tsa.css" %} "/>
+	<script src="{% static "js/show-menu.js" %}"></script>
 </head>
 <body>
+<<<<<<< HEAD
 	<header>
 	<nav class="top-bar" data-topbar role="navigation">
 		<ul class="title-area">
@@ -52,22 +54,57 @@
 			</ul>
 		</section>
 	</nav>
+=======
+	<header class="head">
+		<a href="#" onclick="show_menu()" class="boton_menu icon-menu"></a>
+		<nav class="menu">
+			<ul class="lista">
+				<li class="items"><a href="/">Tareas sin Atencón</a>
+				<li class="items"><a href="/tp">Tareas pendientes</a></li>
+				<li class="items"><a href="#">Reportes</a></li>
+	    		<li class="items">
+	    			<div>
+	      				<input type="text" placeholder="Tareas o Actividades" />
+			      		<a class="icon-search" href="#"></a>
+			      	</div>
+	    		</li>	
+	    	</ul>	
+		</nav>
+		<div class="titulo-header">
+			<div class="memorize">
+				<span>Memorize</span>
+			</div>
+			<div class="usuario">
+				<span>{{request.user}}</span>
+			</div>
+		</div>
+		<a href="/logout_p" class="logout icon-exit"></a>
+>>>>>>> estilos
 	</header>
-
-	<h2 class="radius alert label text-center">Listado de tareas Sin Atención 
+	<h2 class="titulo">Listado de tareas Sin Atención {{ids_tarea|length}}
 	</h2>
 	<section class="container">
 	{%for i in tareas_sa%}
-		<div class="row panel clearfix">
-			<a href="/actividades/id={{i.id}}" class="small-12 small-text-center medium-text-left medium-5 columns">{{i.description}}</a>			
-			<div class="small-6 medium-3 columns">
-				{{i.owner}}
+		<article class="tarea">
+			<a class="tarea-titulo" href="/actividades/id={{i.id}}">{{i.description}}</a>			
+			<div class="tarea-datos">
+				<div class="left owner">
+					<span>
+						{{i.owner}}
+					</span>	
+				</div>
+				<div class="right">
+					<div>
+						{{i.date_tarea}}
+					</div>
+					<div>
+						{{i.date_tarea|timesince}}
+					</div>			
+				</div>		
 			</div>
-			<div class="small-6 medium-4 columns">
-				{{i.date_tarea}}			
-			</div>
-		</div>
+		</article>
 	{% endfor %}
 	</section>
+	<a href="add_tarea/" class="button">Nueva Tarea</a>
 </body>
 </html>

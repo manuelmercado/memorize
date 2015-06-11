@@ -1,0 +1,117 @@
+@import "normalize.styl"
+@import "fonts.styl"
+@import "nib"
+
+verde = #006A4A
+verde_claro = #0E8964
+rojo_titulo = #925346
+
+
+body
+	font-size 16px
+	font-family 'Myriad Pro Regular'
+a
+	text-decoration none
+
+.boton_menu
+	color white
+	font-size 1.5em
+	left 1em
+	margin-top -10px
+	position absolute
+	top 50%
+.button
+	background-color verde
+	border-bottom-left-radius 19px
+	border-bottom-right-radius 19px
+	border-top-left-radius 19px
+	border-top-right-radius 19px
+	color white
+	display block
+	left 50%
+	margin-left -70px
+	padding 0.5em 0.7em
+	position fixed
+	text-align center
+	top 92vh
+	width 125px
+	z-index 10
+	
+.center
+	text-align center
+	
+.container
+	height 73vh
+	margin 0 0.5em
+	overflow scroll
+.head
+	background-color verde
+	color white
+	height 4.1em
+	margin 0
+	// overflow hidden
+	position relative
+.menu
+	background-color verde
+	color white
+	height 200px
+	left -250px
+	opacity 0.85
+	position absolute
+	top 65px
+	width 250px
+	z-index 1
+	.lista
+		font-size 1em
+		list-style-type none
+		padding 0
+		.items
+			margin 1.3em 0.5em
+		a
+			color white
+			
+	transition 1s
+	&-is_active
+		left 0
+			
+.left
+	float left
+.logout
+	color white
+	font-size 1.5em
+	margin-top -10px
+	position absolute
+	right 1em		
+	top 50%
+.owner
+	margin-top 1em
+.right
+	float right
+.tarea
+	padding 0 0 0.5em 0
+	border-bottom solid 1px verde_claro
+	margin 0.5em 0 0 0
+	.tarea-titulo
+		display block
+		color verde_claro
+		padding 0 0 1em 0
+.tarea-datos
+	overflow hidden
+	
+.titulo
+	background-color rojo_titulo
+	border-bottom-left-radius 14px
+	border-bottom-right-radius 14px
+	border-top-left-radius 14px
+	border-top-right-radius 14px
+	color white
+	font-size 0.8em
+	margin 1em 0.5em 0.5em 0.5em
+	padding 0.5em 0.5em
+	text-align center
+.titulo-header
+	text-align center
+	padding 0.5em 0 0 0
+	.usuario
+		margin-top 1.2em
+		font-size 0.8em
