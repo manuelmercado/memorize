@@ -44,6 +44,10 @@ a
 	height 73vh
 	margin 0 0.5em
 	overflow scroll
+.date
+	width 62%
+	text-align left
+	font-size 0.9em
 .head
 	background-color verde
 	color white
@@ -85,18 +89,22 @@ a
 	top 50%
 .owner
 	margin-top 1em
+	width 38%
+	margin-right 0
+	
 .right
 	float right
 .tarea
 	padding 0 0 0.5em 0
 	border-bottom solid 1px verde_claro
 	margin 0.5em 0 0 0
-	.tarea-titulo
-		display block
-		color verde_claro
-		padding 0 0 1em 0
-.tarea-datos
+	display block
 	overflow hidden
+	&-titulo
+		color verde_claro
+		display block
+		padding 0 0 1em 0
+		width 100%
 	
 .titulo
 	background-color rojo_titulo
@@ -115,3 +123,24 @@ a
 	.usuario
 		margin-top 1.2em
 		font-size 0.8em
+		
+@media screen and (min-width: 640px)
+	.tarea
+		position relative
+	.date
+		position absolute
+		bottom 0.2em
+		right 1em
+	.titulo
+		width 318px
+		margin-left 12px
+	.tarea-titulo
+		margin-top 1em
+		float left
+		width 48%
+		padding 0
+		display inline
+	.owner
+		float none
+		margin 0
+	
