@@ -9,52 +9,6 @@
 	<script src="{% static "js/show-menu.js" %}"></script>
 </head>
 <body>
-<<<<<<< HEAD
-	<header>
-	<nav class="top-bar" data-topbar role="navigation">
-		<ul class="title-area">
-			<li class="name">
-				<h1><a href="/">Home</a></h1>
-			</li>
-			<li class="toggle-topbar menu-icon">
-				<a href=""><span>Menu</span></a>
-			</li>
-		</ul>
-		<section class="top-bar-section">
-			<ul class="left">
-				<li>
-					<a href="">Tareas Sin Atencion: {{ids_tarea|length}}</a>
-				</li>
-			</ul>
-			<ul class="left">
-				<li><a href="/tareas_pendientes/">Tareas pendientes</a></li>
-			</ul>
-			<ul class="left">
-				<li><a href="">Reportes</a></li>
-			</ul>
-			<ul class="left">
-				<li class="has-form">
-					<div class="row collapse">
-	    				<div class="large-8 small-9 columns">
-	      					<input type="text" placeholder="Tareas">
-	    				</div>
-	    				<div class="large-4 small-3 columns">
-	      					<a href="#" class="alert button expand">Busca</a>
-	    				</div>
-	  				</div>
-				</li>
-			</ul>
-			<ul class="right">
-				<li><a href="logout_p/">Logout</a></li>
-				<li class="divider"></li>
-			</ul>
-			<ul class="right">
-				<li class="label"><span>{{request.user}}</span></li>
-				<li class="divider"></li>
-			</ul>
-		</section>
-	</nav>
-=======
 	<header class="head">
 		<a href="#" onclick="show_menu()" class="boton_menu icon-menu"></a>
 		<nav class="menu">
@@ -79,7 +33,6 @@
 			</div>
 		</div>
 		<a href="/logout_p" class="logout icon-exit"></a>
->>>>>>> estilos
 	</header>
 	<h2 class="titulo">Listado de tareas Sin Atención {{ids_tarea|length}}
 	</h2>
