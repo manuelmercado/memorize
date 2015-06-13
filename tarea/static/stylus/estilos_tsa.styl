@@ -42,12 +42,12 @@ a
 	
 .container
 	height 73vh
-	margin 0 0.5em
+	margin 0 1em
 	overflow scroll
 .date
-	width 62%
+	width 175px
 	text-align left
-	font-size 0.9em
+	font-size 0.8em
 .head
 	background-color verde
 	color white
@@ -91,6 +91,7 @@ a
 	margin-top 1em
 	width 38%
 	margin-right 0
+	font-size 0.8em
 	
 .right
 	float right
@@ -128,19 +129,32 @@ a
 	.tarea
 		position relative
 	.date
+		width 210px
 		position absolute
-		bottom 0.2em
+		bottom 0.4em
 		right 1em
+		font-size 1em
 	.titulo
 		width 318px
 		margin-left 12px
 	.tarea-titulo
 		margin-top 1em
 		float left
-		width 48%
-		padding 0
+		width 60%
+		padding 0 0 0.3em 0
 		display inline
 	.owner
 		float none
 		margin 0
+
+@media screen and (min-width: 1000px)
+	.date
+		display block
+		width 210px
+	.owner
+		float right
+		margin-top 1em
+		
+		
+		
 	
