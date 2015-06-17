@@ -6,23 +6,24 @@
 	<title>Lista de Actividades</title>
 	{% load static from staticfiles %}
 	<link rel="stylesheet" href="{% static "css/estilos_la.css" %} "/>
+	<script src="{% static "js/show-menu.js" %}"></script>
 </head>
 <body>
 	<header class="head">
-		<a href="#" class="boton_menu icon-menu"></a>
+		<a href="#" onclick="show_menu()" class="boton_menu icon-menu"></a>
+      	<a href="/" class="home icon-home"></a>
+		<a href="/actividades/add_actividades/id={{id}}" class="add_tarea icon-pencil"></a>
 		<nav class="menu">
-			<ul>
-				<li><a href="#">Tareas sin Atencón</a>
-				<li><a href="/">Tareas pendientes</a></li>
-				<li><a href="">Reportes</a></li>
-	    		<li>
+			<ul class="lista">
+				<li class="items"><a href="/">Tareas sin Atención</a>
+				<li class="items"><a href="/tp">Tareas pendientes</a></li>
+				<li class="items"><a href="#">Reportes</a></li>
+	    		<li class="items">
 	    			<div>
-	      				<input type="text" placeholder="Tareas">
-	    			</div>
-	    			
-	      		<li>
-	      			<a href="#">Busca</a>
-	      		</l1>	
+	      				<input type="text" placeholder="Tareas o Actividades" />
+			      		<a class="icon-search" href="#"></a>
+			      	</div>
+	    		</li>		
 	  		</ul>	
 		</nav>
 		<div class="titulo-header">
@@ -54,6 +55,5 @@
 		</article>
 		{% endfor %}
 	</section>
-	<a class="button" href="/actividades/add_actividades/id={{id}}">Nueva Actividad</a>
  </body>
 </html>

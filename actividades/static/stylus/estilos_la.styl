@@ -1,18 +1,27 @@
 @import "normalize.styl"
-@import "nib"
 @import "fonts.styl"
+@import "nib"
 
 verde = #006A4A
 verde_claro = #0E8964
 rojo_titulo = #925346
 otro_verde_claro = #66806C
 
-
+a
+	text-decoration none
 body
 	font-size 16px
 	font-family 'Myriad Pro Regular'
-a
-	text-decoration none
+
+.add_tarea
+	color white
+	font-size 1.2em
+	margin-top -10px
+	position absolute
+	left 2.5em		
+	top 50%
+	padding-left 0.7em
+	padding-top 0.1em
 .actividad
 	padding 0 0 0.5em 0
 	border-bottom solid 1px verde_claro
@@ -46,22 +55,48 @@ a
 	width 125px
 	z-index 10
 .container
-	margin 0 0.5em
-	height 68vh
-	overflow scroll	
-	
+//	height 80vh
+	margin 0 1em
+//	overflow scroll
 .head
 	background-color verde
 	color white
 	height 4.1em
 	margin 0
-	overflow hidden
+	//overflow hidden
 	position relative
-.menu
+.home
+	color white
+	font-size 1.5em
+	left 1em
+	margin-top -10px
+	position absolute
+	top 50%
 	display none
+.menu
+	background-color verde
+	color white
+	height 200px
+	left -250px
+	opacity 0.85
+	position absolute
+	top 65px
+	width 250px
+	z-index 1
+	.lista
+		font-size 1em
+		list-style-type none
+		padding 0
+		.items
+			margin 1.3em 0.5em
+		a
+			color white
+			
+	transition 1s
+	&-is_active
+		left 0
 .left
 	float left
-	
 .logout
 	color white
 	font-size 1.5em
@@ -69,7 +104,6 @@ a
 	position absolute
 	right 1em		
 	top 50%
-	
 .right
 	float right
 	
@@ -86,7 +120,7 @@ a
 	text-align center
 .titulo-header
 	text-align center
-	margin-top 0.5em
+	padding 0.5em 0 0 0
 	.usuario
 		margin-top 1.2em
 		font-size 0.8em
