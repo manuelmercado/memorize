@@ -44,14 +44,14 @@
 			<p class="actividad-titulo">
 				{{ind.Descripcion}}
 			</p>
-			<div class="actividad-datos">
-				<div class="left">
-					{{ind.usuario}}
+			<!-- <div class="actividad-datos"> -->
+				<div class="owner left">
+					<span>{{ind.usuario}}</span>
 				</div>
-				<div class="right">
+				<div class="right date">
 					{{ind.fecha}}
 				</div>
-			</div>
+			<!-- </div> -->
 		</article>
 		{% endfor %}
 	</section>
