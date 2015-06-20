@@ -40,9 +40,13 @@
   <section class="container ">
 	{% for ind in q_tareas %}
    <article class="tarea">
-      <a class="tarea-titulo" href="/actividades/id={{ind.id}}">{{ind.description}}</a>     
-      <div class="tarea-datos">
-        <div class="right">
+      <a class="tarea-titulo" href="/actividades/id={{ind.id}}">{{ind.description}}</a>    
+      <div class="left owner">
+          <span>
+            {{ind.owner}}
+          </span> 
+        </div>
+        <div class="right date">
           <div>
             {{ind.date_tarea}}
           </div>
@@ -50,12 +54,6 @@
             {{ind.date_tarea|timesince}}
           </div>      
         </div>    
-        <div class="left owner">
-          <span>
-            {{ind.owner}}
-          </span> 
-        </div>
-      </div>
     </article>
  	{% endfor %}
  </section>

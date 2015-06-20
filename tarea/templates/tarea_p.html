@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 	<title>tareas sin atencion</title>
 	{% load static from staticfiles %}
 	<link rel="stylesheet" href="{% static "css/estilos_tsa.css" %} "/>
@@ -41,7 +41,7 @@
 	<section class="container">
 	{%for i in tareas_sa%}
 		<article class="tarea">
-			<a class="tarea-titulo" href="/actividades/id={{i.id}}">{{i.description}}</a>			
+			<a class="tarea-titulo" href="/actividades/id={{i.id}}">{{i.description}}</a>
 			<div class="owner left">
 				<span>
 					{{i.owner}}
